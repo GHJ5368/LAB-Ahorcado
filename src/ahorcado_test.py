@@ -14,8 +14,7 @@ def test_elegir_palabra(palabras):
 
 def test_enmascarar_palabra(palabra, letras_probadas):
     print(f"Testeando enmascarar_palabra() con la palabra '{palabra}' y las letras ({','.join(letras_probadas)})... ")
-    resultado = enmascarar_palabra(palabra, letras_probadas)
-    print(f"Palabra enmascarada: {resultado}")
+
     print()
 
 def test_pedir_letra(letras_probadas):

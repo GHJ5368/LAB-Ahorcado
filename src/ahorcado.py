@@ -53,12 +53,33 @@ def comprobar_letra(palabra_secreta, letra):
 
 ### Apartado f
 
-def comprobar_palabra_completa(palabra,letras_probadas):
+def comprobar_palabra_completa(palabra_secreta,letras_probadas):
+    '''
+    OTRA FORMA
+
+    res = False
+    for letra in palabra_secreta:
+        if letra in letras_probadas:
+            res=True
+        else:
+            return False
+    return res
+    '''
+    '''
+    OTRA FORMA
+
+    res= True
+    for letra in palabra_secreta:
+        if letra not in letras_probadas:
+            res = False
+            break
+    return res
+    '''
     letras_acertadas=0
     for letra in letras_probadas:
-        if letra in palabra:
+        if letra in palabra_secreta:
             letras_acertadas += 1
-    if letras_acertadas == len(palabra):
+    if letras_acertadas == len(palabra_secreta):
         return True
     else:
         return False
