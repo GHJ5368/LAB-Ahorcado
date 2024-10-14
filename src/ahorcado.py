@@ -116,18 +116,36 @@ def jugar(max_intentos, palabras):
     palabra_secreta = elegir_palabra(palabras)
     letras_probadas = set()
     intentos_fallidos = 0
+    '''
+    TAMBIEN SE PUEDE:
+
+    letras_probadas = set() ; intentos_fallidos = 0
+    letras_probadas , intentos_fallidos = set() , 0
+
+    '''
+    '''
+    OTRA OPCION
+
+    while intentos_fallidos <= max_intentos:
+        ... y eliminamos el if ...
+    '''
     while True:
+        print(f"Numero de intentos fallidos: {intentos_fallidos} - Numero de intentos máximos: {max_intentos}")
         intento = ejecutar_turno(palabra_secreta, letras_probadas)
+        
+        # if not intento: ##como intento es booleano no hace falta hacer comparacion.
         if intento == False:
             intentos_fallidos += 1
 
         if intentos_fallidos == max_intentos:
             print("Has llegado al numero maximo de intentos")
+            print(f"La palabra secreta era {palabra_secreta}")
             break
 
         palabra_terminada = comprobar_palabra_completa(palabra_secreta,letras_probadas)
         if palabra_terminada:
-            print("Enhorabuena, has acertado la palabra")
+            intentos_restantes = max_intentos - intentos_fallidos
+            print(f"Enhorabuena, has acertado la palabra n\ Te han sobrado {intentos_restantes}")
             break
 
 # Iniciar el juego
