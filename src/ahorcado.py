@@ -46,10 +46,10 @@ def pedir_letra(letras_probadas):
 def comprobar_letra(palabra_secreta, letra):
     if letra in palabra_secreta :
         print('¡Bien hecho! Esa letra está en la palabra.')
-        return True
+        return True #Acierto
     else:
         print('Lo siento, esa letra no está en la palabra.')
-        return False
+        return False #Fallo
 
 ### Apartado f
 
@@ -80,9 +80,9 @@ def comprobar_palabra_completa(palabra_secreta,letras_probadas):
         if letra in palabra_secreta:
             letras_acertadas += 1
     if letras_acertadas == len(palabra_secreta):
-        return True
+        return True #Palabra Acertada
     else:
-        return False
+        return False #Palabra Sin Terminar
 
 ### Apartado g
 
@@ -93,9 +93,9 @@ def ejecutar_turno(palabra_secreta, letras_probadas):
     comprobacion_letra = comprobar_letra(palabra_secreta,letra)
     if comprobacion_letra == True:
         letras_probadas.add(letra)
-        return True
+        return True #Acierto
     else:
-        return False
+        return False #Fallo
 
 ## Ejercicio 2: 
 
